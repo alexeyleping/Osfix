@@ -1,0 +1,12 @@
+create table "schemaOsfix".client
+(
+    "clientId"      bigserial
+        constraint client_pk
+            primary key,
+    "clientName"    text not null,
+    website         text,
+    "clientComment" text
+);
+
+create unique index client_clientid_uindex
+    on "schemaOsfix".client ("clientId");

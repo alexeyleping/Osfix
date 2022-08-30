@@ -1,0 +1,15 @@
+create table "schemaOsfix".application
+(
+    "applicationId"     bigserial
+        constraint application_pk
+            primary key
+        constraint application_client_id_clientid_fk
+            references "schemaOsfix".client (clientId)
+            on delete cascade,
+    "createDate"        date not null,
+    "codeWord"          text,
+    "statusApplication" text
+);
+
+create unique index application_applicationid_uindex
+    on "schemaOsfix".application ("applicationId");
