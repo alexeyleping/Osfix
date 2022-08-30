@@ -1,29 +1,28 @@
 package com.example.osfix.entity;
 
-import jakarta.persistence.*;
-
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Table(name = "client")
 public class Client {
     @Id
-    @Column(name = "clientId")
+    @Column(name = "client_id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long clientId;
 
-    @Column(name = "clientName")
+    @Column(name = "client_name")
     private String clientName;
 
-    @Column(name = "website")
+    @Column(name = "web_site")
     private String website;
 
-    @Column(name = "clientComment")
+    @Column(name = "client_comment")
     private String clientComment;
 
     @OneToMany
-    private List<Application> applicationList;
+    private List<Application> applicationList = new ArrayList<>();
 
     public Client() {
     }
@@ -68,27 +67,4 @@ public class Client {
         this.applicationList = applicationList;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Client client = (Client) o;
-        return Objects.equals(clientId, client.clientId) && Objects.equals(clientName, client.clientName) && Objects.equals(website, client.website) && Objects.equals(clientComment, client.clientComment) && Objects.equals(applicationList, client.applicationList);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(clientId, clientName, website, clientComment, applicationList);
-    }
-
-    @Override
-    public String toString() {
-        return "Client{" +
-                "clientId=" + clientId +
-                ", clientName='" + clientName + '\'' +
-                ", website='" + website + '\'' +
-                ", clientComment='" + clientComment + '\'' +
-                ", applicationList=" + applicationList +
-                '}';
-    }
 }

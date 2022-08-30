@@ -1,0 +1,9 @@
+create table "schemaOsfix".products
+(
+    product_id     bigserial primary key
+        constraint products_application_applicationid_fk
+            references "schemaOsfix".application,
+    product_name    text    not null,
+    product_weight  numeric not null,
+    product_comment text
+);
