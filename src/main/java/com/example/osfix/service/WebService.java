@@ -30,9 +30,8 @@ public class WebService {
     }
 
     @PostMapping
-    public void createClient(Long id, String name, String webSite, String clientComment){
+    public void createClient(String name, String webSite, String clientComment){
         Client client = new Client();
-        client.setClientId(id);
         client.setClientName(name);
         client.setWebsite(webSite);
         client.setClientComment(clientComment);
