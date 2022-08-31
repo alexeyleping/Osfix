@@ -66,5 +66,4 @@ public class Client {
     public void setApplicationList(List<Application> applicationList) {
         this.applicationList = applicationList;
     }
-
 }

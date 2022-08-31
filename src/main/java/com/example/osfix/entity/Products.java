@@ -7,17 +7,17 @@ import java.util.Objects;
 @Table(name = "products")
 public class Products {
     @Id
-    @Column(name = "productId")
+    @Column(name = "product_id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @Column(name = "productName")
+    @Column(name = "product_name")
     private String productName;
 
-    @Column(name = "productWeight")
+    @Column(name = "product_weight")
     private double productWeight;
 
-    @Column(name = "productComment")
+    @Column(name = "product_comment")
     private String productComment;
 
     public Products() {
