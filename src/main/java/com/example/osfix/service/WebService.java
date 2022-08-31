@@ -5,7 +5,10 @@ import com.example.osfix.repository.ApplicationRepository;
 import com.example.osfix.repository.ClientRepository;
 import com.example.osfix.repository.ProductsRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.Optional;
 
@@ -26,7 +29,7 @@ public class WebService {
         return clientRepository.findById(id);
     }
 
-    @GetMapping
+    @PostMapping
     public void createClient(Long id, String name, String webSite, String clientComment){
         Client client = new Client();
         client.setClientId(id);
@@ -36,12 +39,12 @@ public class WebService {
         clientRepository.save(client);
     }
 
-    @GetMapping
+    @DeleteMapping
     public void deleteClient(Long id){
         clientRepository.deleteById(id);
     }
 
-    @GetMapping
+    @PutMapping
     public void updateClient(Long id, String name, String webSite, String clientComment){
         Client client = new Client();
         client.setClientId(id);
