@@ -22,6 +22,7 @@ public class Client {
     private String clientComment;
 
     @OneToMany
+    @JoinColumn(name = "application_id")
     private List<Application> applicationList = new ArrayList<>();
 
     public Client() {
