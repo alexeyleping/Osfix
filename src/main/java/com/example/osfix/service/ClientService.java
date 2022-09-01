@@ -1,11 +1,10 @@
 package com.example.osfix.service;
 
 import com.example.osfix.entity.Client;
-import com.example.osfix.entity.DTO.ClientDto;
+import com.example.osfix.entity.DTO.CreateClientDto;
 import com.example.osfix.repository.ClientRepository;
 import com.sun.istack.NotNull;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.Optional;
 
@@ -18,23 +17,23 @@ public class ClientService {
     public Optional<Client> getClient(Long id){
         return clientRepository.findById(id);
     }
-    public void createClient(@NotNull ClientDto clientDto){
+    public void createClient(@NotNull CreateClientDto createClientDto){
         Client client = new Client();
-        client.setClientName(clientDto.getName());
-        client.setWebsite(clientDto.getSite());
-        client.setClientComment(clientDto.getComment());
+        client.setClientName(createClientDto.getName());
+        client.setWebsite(createClientDto.getSite());
+        client.setClientComment(createClientDto.getComment());
         clientRepository.save(client);
     }
-    public void updateClient(@NotNull ClientDto clientDto){
+    public void updateClient(@NotNull CreateClientDto createClientDto){
         Client client = new Client();
-        client.setClientId(clientDto.getId());
-        client.setClientName(clientDto.getName());
-        client.setWebsite(clientDto.getSite());
-        client.setClientComment(clientDto.getComment());
+        client.setClientId(createClientDto.getId());
+        client.setClientName(createClientDto.getName());
+        client.setWebsite(createClientDto.getSite());
+        client.setClientComment(createClientDto.getComment());
         clientRepository.save(client);
     }
-    public void deleteClient(@NotNull ClientDto clientDto){
-        Long clientId = clientDto.getId();
+    public void deleteClient(@NotNull CreateClientDto createClientDto){
+        Long clientId = createClientDto.getId();
         clientRepository.deleteById(clientId);
     }
 

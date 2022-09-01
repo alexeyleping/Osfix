@@ -1,7 +1,7 @@
 package com.example.osfix.controllers;
 
 import com.example.osfix.entity.Client;
-import com.example.osfix.entity.DTO.ClientDto;
+import com.example.osfix.entity.DTO.CreateClientDto;
 import com.example.osfix.service.ClientService;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,17 +21,17 @@ public class ClientController {
     }
 
     @PostMapping
-    public void createClient(@RequestBody ClientDto clientDto) {
-        clientService.createClient(clientDto);
+    public void createClient(@RequestBody CreateClientDto createClientDto) {
+        clientService.createClient(createClientDto);
     }
 
     @PutMapping
-    public void updateClient(@RequestBody ClientDto clientDto) {
-        clientService.updateClient(clientDto);
+    public void updateClient(@RequestBody CreateClientDto createClientDto) {
+        clientService.updateClient(createClientDto);
     }
     @DeleteMapping
-    public void deleteClient(@RequestParam ClientDto clientDto) {
-        clientService.deleteClient(clientDto);
+    public void deleteClient(@RequestBody CreateClientDto createClientDto) {
+        clientService.deleteClient(createClientDto);
     }
 
 

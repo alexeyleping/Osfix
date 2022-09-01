@@ -1,25 +1,19 @@
 package com.example.osfix.entity.DTO;
 
-public class ClientDto {
+public class CreateClientDto {
         private Long id;
         private String name;
-        private String webSite;
+        private String website;
         private String comment;
 
-        public ClientDto(Long id, String name, String webSite, String comment) {
+        public CreateClientDto(Long id, String name, String website, String comment) {
             this.id = id;
             this.name = name;
-            this.webSite = webSite;
+            this.website = website;
             this.comment = comment;
         }
 
-    public ClientDto(String name, String webSite, String comment) {
-        this.name = name;
-        this.webSite = webSite;
-        this.comment = comment;
-    }
-
-        public ClientDto(Long id) {
+        public CreateClientDto(Long id) {
             this.id = id;
         }
 
@@ -32,7 +26,7 @@ public class ClientDto {
         }
 
         public String getSite() {
-            return webSite;
+            return website;
         }
 
         public String getComment() {
