@@ -14,17 +14,14 @@ public class ClientController {
     public ClientController(ClientService clientService) {
         this.clientService = clientService;
     }
-
     @GetMapping(value = "/{id}")
     public Optional<Client> getClient(@PathVariable Long id) {
         return clientService.getClient(id);
     }
-
     @PostMapping
     public void createClient(@RequestBody CreateClientDto createClientDto) {
         clientService.createClient(createClientDto);
     }
-
     @PutMapping
     public void updateClient(@RequestBody CreateClientDto createClientDto) {
         clientService.updateClient(createClientDto);
@@ -33,9 +30,4 @@ public class ClientController {
     public void deleteClient(@RequestBody CreateClientDto createClientDto) {
         clientService.deleteClient(createClientDto);
     }
-
-
-
-
-
 }
