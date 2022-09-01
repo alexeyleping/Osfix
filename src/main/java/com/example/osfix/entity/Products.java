@@ -1,7 +1,6 @@
 package com.example.osfix.entity;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 @Entity
 @Table(name = "products")
@@ -54,5 +53,4 @@ public class Products {
     public void setProductComment(String productComment) {
         this.productComment = productComment;
     }
-
 }

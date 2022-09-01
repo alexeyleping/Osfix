@@ -2,11 +2,11 @@ package com.example.osfix.service;
 
 import com.example.osfix.entity.Client;
 import com.example.osfix.entity.DTO.CreateClientDto;
+import com.example.osfix.entity.DTO.ReturnClientDto;
 import com.example.osfix.repository.ClientRepository;
 import com.sun.istack.NotNull;
 import org.springframework.stereotype.Service;
 
-import javax.security.auth.spi.LoginModule;
 import java.util.Optional;
 
 @Service
@@ -17,8 +17,13 @@ public class ClientService {
         this.clientRepository = clientRepository;
     }
 
-    public Optional<Client> getClient(Long id) {
-        return clientRepository.findById(id);
+    public ReturnClientDto getClient(Long id) {
+        Optional<Client> client = clientRepository.findById(id);
+        ReturnClientDto returnClientDto = new ReturnClientDto();
+        returnClientDto.setName(client.get().getClientName());
+        returnClientDto.setWebsite(client.get().getWebsite());
+        returnClientDto.setComment(client.get().getWebsite());
+        return returnClientDto;
     }
 
     public void createClient(@NotNull CreateClientDto createClientDto) {
@@ -28,7 +33,6 @@ public class ClientService {
         client.setClientComment(createClientDto.getComment());
         clientRepository.save(client);
     }
-
 
     public void updateClient(@NotNull CreateClientDto createClientDto) {
         Client client = clientRepository.getReferenceById(createClientDto.getId());
@@ -45,6 +49,4 @@ public class ClientService {
         Long clientId = createClientDto.getId();
         clientRepository.deleteById(clientId);
     }
-
-
 }

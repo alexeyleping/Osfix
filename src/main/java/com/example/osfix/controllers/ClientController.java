@@ -1,11 +1,9 @@
 package com.example.osfix.controllers;
 
-import com.example.osfix.entity.Client;
 import com.example.osfix.entity.DTO.CreateClientDto;
+import com.example.osfix.entity.DTO.ReturnClientDto;
 import com.example.osfix.service.ClientService;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/client")
@@ -15,7 +13,7 @@ public class ClientController {
         this.clientService = clientService;
     }
     @GetMapping(value = "/{id}")
-    public Optional<Client> getClient(@PathVariable Long id) {
+    public ReturnClientDto getClient(@PathVariable Long id) {
         return clientService.getClient(id);
     }
     @PostMapping
