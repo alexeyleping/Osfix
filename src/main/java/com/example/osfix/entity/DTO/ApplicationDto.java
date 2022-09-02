@@ -4,20 +4,20 @@ import com.example.osfix.entity.ApplicationStatus;
 
 import java.util.Date;
 
-public class CreateApplicationDto {
+public class ApplicationDto {
     private Long applicationId;
     private Date createDate;
     private String codeWord;
     private ApplicationStatus statusApp;
 
-    public CreateApplicationDto(Long applicationId, Date createDate, String codeWord, ApplicationStatus statusApp) {
+    public ApplicationDto(Long applicationId, Date createDate, String codeWord, ApplicationStatus statusApp) {
         this.applicationId = applicationId;
         this.createDate = createDate;
         this.codeWord = codeWord;
         this.statusApp = statusApp;
     }
 
-    public CreateApplicationDto() {
+    public ApplicationDto() {
     }
 
     public Long getApplicationId() {

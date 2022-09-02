@@ -1,17 +1,15 @@
 package com.example.osfix.entity.DTO;
 
-import javax.persistence.Column;
-
-public class CreateProductsDto {
+public class ProductsDto {
     private Long id;
     private String productName;
     private double productWeight;
     private String productComment;
 
-    public CreateProductsDto() {
+    public ProductsDto() {
     }
 
-    public CreateProductsDto(Long id, String productName, double productWeight, String productComment) {
+    public ProductsDto(Long id, String productName, double productWeight, String productComment) {
         this.id = id;
         this.productName = productName;
         this.productWeight = productWeight;

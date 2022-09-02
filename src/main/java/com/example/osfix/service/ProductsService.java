@@ -1,9 +1,6 @@
 package com.example.osfix.service;
 
-import com.example.osfix.entity.Application;
-import com.example.osfix.entity.Client;
-import com.example.osfix.entity.DTO.CreateProductsDto;
-import com.example.osfix.entity.DTO.ReturnApplicationDto;
+import com.example.osfix.entity.DTO.ProductsDto;
 import com.example.osfix.entity.DTO.ReturnProductsDto;
 import com.example.osfix.entity.Products;
 import com.example.osfix.repository.ProductsRepository;
@@ -29,27 +26,27 @@ public class ProductsService {
         return returnProductsDto;
     }
 
-    public void createProducts(CreateProductsDto createProductsDto) {
+    public void createProducts(ProductsDto productsDto) {
         Products products = new Products();
-        products.setProductName(createProductsDto.getProductName());
-        products.setProductComment(createProductsDto.getProductComment());
-        products.setProductWeight(createProductsDto.getProductWeight());
+        products.setProductName(productsDto.getProductName());
+        products.setProductComment(productsDto.getProductComment());
+        products.setProductWeight(productsDto.getProductWeight());
         productsRepository.save(products);
     }
 
-    public void updateProducts(CreateProductsDto createProductsDto) {
-        Products products = productsRepository.getReferenceById(createProductsDto.getId());
-        if(createProductsDto.getProductName() != null)
-            products.setProductName(createProductsDto.getProductName());
-        if(createProductsDto.getProductComment() != null)
-            products.setProductComment(createProductsDto.getProductComment());
-        if(createProductsDto.getProductWeight() != 0)
-            products.setProductWeight(createProductsDto.getProductWeight());
+    public void updateProducts(ProductsDto productsDto) {
+        Products products = productsRepository.getReferenceById(productsDto.getId());
+        if(productsDto.getProductName() != null)
+            products.setProductName(productsDto.getProductName());
+        if(productsDto.getProductComment() != null)
+            products.setProductComment(productsDto.getProductComment());
+        if(productsDto.getProductWeight() != 0)
+            products.setProductWeight(productsDto.getProductWeight());
         productsRepository.save(products);
     }
 
-    public void deleteProducts(CreateProductsDto createProductsDto) {
-        Long productsId = createProductsDto.getId();
+    public void deleteProducts(ProductsDto productsDto) {
+        Long productsId = productsDto.getId();
         productsRepository.deleteById(productsId);
     }
 }

@@ -1,6 +1,6 @@
 package com.example.osfix.controllers;
 
-import com.example.osfix.entity.DTO.CreateApplicationDto;
+import com.example.osfix.entity.DTO.ApplicationDto;
 import com.example.osfix.entity.DTO.ReturnApplicationDto;
 import com.example.osfix.service.ApplicationService;
 import org.springframework.web.bind.annotation.*;
@@ -20,17 +20,17 @@ public class ApplicationController {
     }
 
     @PostMapping
-    public void createApplication(@RequestBody CreateApplicationDto createApplicationDto) {
-        applicationService.createApplication(createApplicationDto);
+    public void createApplication(@RequestBody ApplicationDto applicationDto) {
+        applicationService.createApplication(applicationDto);
     }
 
     @PutMapping
-    public void updateApplication(@RequestBody CreateApplicationDto createApplicationDto) {
-        applicationService.updateApplication(createApplicationDto);
+    public void updateApplication(@RequestBody ApplicationDto applicationDto) {
+        applicationService.updateApplication(applicationDto);
     }
 
     @DeleteMapping
-    public void deleteApplication(@RequestBody CreateApplicationDto createApplicationDto) {
-        applicationService.deleteApplication(createApplicationDto);
+    public void deleteApplication(@RequestBody ApplicationDto applicationDto) {
+        applicationService.deleteApplication(applicationDto);
     }
 }

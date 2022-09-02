@@ -22,6 +22,9 @@ public class Application {
     @Enumerated(EnumType.STRING)
     private ApplicationStatus statusApp;
 
+    @Column(name = "client_id_in_application")
+    private Long clientId;
+
     @ManyToMany
     @JoinTable(name = "application_products",
             joinColumns = @JoinColumn(name = "application_id"),
