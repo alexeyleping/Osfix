@@ -1,14 +1,27 @@
-package com.example.osfix.entity.DTO;
+package com.example.osfix.controllers.dto;
 
 import com.example.osfix.entity.ApplicationStatus;
+import com.example.osfix.entity.Products;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class ApplicationDto {
     private Long applicationId;
     private Date createDate;
     private String codeWord;
     private ApplicationStatus statusApp;
+
+    public List<Products> getProductsList() {
+        return productsList;
+    }
+
+    public void setProductsList(List<Products> productsList) {
+        this.productsList = productsList;
+    }
+
+    private List<Products> productsList = new ArrayList<>();
 
     public ApplicationDto(Long applicationId, Date createDate, String codeWord, ApplicationStatus statusApp) {
         this.applicationId = applicationId;

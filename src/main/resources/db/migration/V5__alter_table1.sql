@@ -1,1 +1,0 @@
-alter table application_products add client_id_in_application bigserial;

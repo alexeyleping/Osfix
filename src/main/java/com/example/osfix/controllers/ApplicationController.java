@@ -1,13 +1,9 @@
 package com.example.osfix.controllers;
 
-import com.example.osfix.entity.Application;
-import com.example.osfix.entity.DTO.ApplicationDto;
-import com.example.osfix.entity.DTO.ReturnApplicationDto;
-import com.example.osfix.entity.Products;
+import com.example.osfix.controllers.dto.ApplicationDto;
+import com.example.osfix.controllers.dto.ReturnApplicationDto;
 import com.example.osfix.service.ApplicationService;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/application")
@@ -19,7 +15,7 @@ public class ApplicationController {
     }
 
     @GetMapping(value = "/{id}")
-    public ReturnApplicationDto getClient(@PathVariable Long id) {
+    public ReturnApplicationDto getApplication(@PathVariable Long id) {
         return applicationService.getApplication(id);
     }
 

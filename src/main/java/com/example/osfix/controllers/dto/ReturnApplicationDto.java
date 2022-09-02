@@ -1,4 +1,4 @@
-package com.example.osfix.entity.DTO;
+package com.example.osfix.controllers.dto;
 
 import com.example.osfix.entity.ApplicationStatus;
 

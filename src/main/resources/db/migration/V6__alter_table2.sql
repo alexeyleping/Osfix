@@ -1,1 +1,0 @@
-alter table application_products DROP COLUMN client_id_in_application;

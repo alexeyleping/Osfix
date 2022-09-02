@@ -1,17 +1,27 @@
-package com.example.osfix.entity.DTO;
+package com.example.osfix.controllers.dto;
 
-public class ReturnProductsDto {
+public class ProductsDto {
+    private Long id;
     private String productName;
     private double productWeight;
     private String productComment;
 
-    public ReturnProductsDto() {
+    public ProductsDto() {
     }
 
-    public ReturnProductsDto(String productName, double productWeight, String productComment) {
+    public ProductsDto(Long id, String productName, double productWeight, String productComment) {
+        this.id = id;
         this.productName = productName;
         this.productWeight = productWeight;
         this.productComment = productComment;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getProductName() {

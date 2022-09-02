@@ -1,7 +1,8 @@
 package com.example.osfix.controllers;
 
-import com.example.osfix.entity.DTO.ProductsDto;
-import com.example.osfix.entity.DTO.ReturnProductsDto;
+import com.example.osfix.controllers.dto.ProductsDto;
+import com.example.osfix.controllers.dto.ReturnApplicationDto;
+import com.example.osfix.controllers.dto.ReturnProductsDto;
 import com.example.osfix.entity.Products;
 import com.example.osfix.service.ProductsService;
 import org.springframework.web.bind.annotation.*;
@@ -34,7 +35,7 @@ public class ProductsController {
         productsService.deleteProducts(productsDto);
     }
 
-    @GetMapping("/applicationproducts/{id}")
+    @GetMapping("/application/{id}")
     public List<Products> getAllBy(@PathVariable(value = "id") Long applicationId) {
         return productsService.getAllBy(applicationId);
     }

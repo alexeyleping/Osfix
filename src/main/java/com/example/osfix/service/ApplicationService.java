@@ -1,15 +1,13 @@
 package com.example.osfix.service;
 
 import com.example.osfix.entity.Application;
-import com.example.osfix.entity.DTO.ApplicationDto;
-import com.example.osfix.entity.DTO.ReturnApplicationDto;
-import com.example.osfix.entity.Products;
+import com.example.osfix.controllers.dto.ApplicationDto;
+import com.example.osfix.controllers.dto.ReturnApplicationDto;
 import com.example.osfix.repository.ApplicationRepository;
 import com.example.osfix.repository.ProductsRepository;
 import com.sun.istack.NotNull;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -22,7 +20,6 @@ public class ApplicationService {
         this.applicationRepository = applicationRepository;
         this.productsRepository = productsRepository;
     }
-
 
     public ReturnApplicationDto getApplication(Long id) {
         Optional<Application> application = applicationRepository.findById(id);

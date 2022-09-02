@@ -1,5 +1,7 @@
 package com.example.osfix.entity;
 
+import com.example.osfix.controllers.dto.ReturnProductsDto;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -20,10 +22,11 @@ public class Application {
     @Column(name = "code_word")
     private String codeWord;
 
+    @Column(name = "status_application")
     @Enumerated(EnumType.STRING)
     private ApplicationStatus statusApp;
 
-    @Column(name = "client_id_in_application")
+    @Column(name = "client_id")
     private Long clientId;
 
     @ManyToMany
@@ -31,6 +34,7 @@ public class Application {
             joinColumns = @JoinColumn(name = "application_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id"))
     private List<Products> productsList = new ArrayList<>();
+
 
     public Application() {
     }

@@ -2,13 +2,12 @@ package com.example.osfix.service;
 
 import com.example.osfix.entity.Application;
 import com.example.osfix.entity.Client;
-import com.example.osfix.entity.DTO.ClientDto;
-import com.example.osfix.entity.DTO.ReturnClientDto;
+import com.example.osfix.controllers.dto.ClientDto;
+import com.example.osfix.controllers.dto.ReturnClientDto;
 import com.example.osfix.repository.ApplicationRepository;
 import com.example.osfix.repository.ClientRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 

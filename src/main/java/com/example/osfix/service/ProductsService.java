@@ -1,14 +1,14 @@
 package com.example.osfix.service;
 
+import com.example.osfix.controllers.dto.ReturnApplicationDto;
 import com.example.osfix.entity.Application;
-import com.example.osfix.entity.DTO.ProductsDto;
-import com.example.osfix.entity.DTO.ReturnProductsDto;
+import com.example.osfix.controllers.dto.ProductsDto;
+import com.example.osfix.controllers.dto.ReturnProductsDto;
 import com.example.osfix.entity.Products;
 import com.example.osfix.repository.ApplicationRepository;
 import com.example.osfix.repository.ProductsRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -60,4 +60,5 @@ public class ProductsService {
         Application application = applicationRepository.findById(applicationId).orElseThrow();
         return application.getProductsList();
     }
+
 }

@@ -1,8 +1,8 @@
 package com.example.osfix.controllers;
 
 import com.example.osfix.entity.Application;
-import com.example.osfix.entity.DTO.ClientDto;
-import com.example.osfix.entity.DTO.ReturnClientDto;
+import com.example.osfix.controllers.dto.ClientDto;
+import com.example.osfix.controllers.dto.ReturnClientDto;
 import com.example.osfix.service.ClientService;
 import org.springframework.web.bind.annotation.*;
 

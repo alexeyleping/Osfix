@@ -1,4 +1,4 @@
-package com.example.osfix.entity.DTO;
+package com.example.osfix.controllers.dto;
 
 public class ReturnClientDto {
     private String name;
