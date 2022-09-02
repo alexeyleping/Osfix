@@ -1,20 +1,26 @@
 package com.example.osfix.service;
 
+import com.example.osfix.entity.Application;
 import com.example.osfix.entity.DTO.ProductsDto;
 import com.example.osfix.entity.DTO.ReturnProductsDto;
 import com.example.osfix.entity.Products;
+import com.example.osfix.repository.ApplicationRepository;
 import com.example.osfix.repository.ProductsRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
 public class ProductsService {
 
     private final ProductsRepository productsRepository;
+    private final ApplicationRepository applicationRepository;
 
-    public ProductsService(ProductsRepository productsRepository) {
+    public ProductsService(ProductsRepository productsRepository, ApplicationRepository applicationRepository) {
         this.productsRepository = productsRepository;
+        this.applicationRepository = applicationRepository;
     }
 
     public ReturnProductsDto getProducts(Long id) {
@@ -48,5 +54,10 @@ public class ProductsService {
     public void deleteProducts(ProductsDto productsDto) {
         Long productsId = productsDto.getId();
         productsRepository.deleteById(productsId);
+    }
+
+    public List<Products> getAllBy(Long applicationId) {
+        Application application = applicationRepository.findById(applicationId).orElseThrow();
+        return application.getProductsList();
     }
 }

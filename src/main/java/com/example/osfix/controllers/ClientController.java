@@ -1,7 +1,6 @@
 package com.example.osfix.controllers;
 
 import com.example.osfix.entity.Application;
-import com.example.osfix.entity.DTO.ApplicationDto;
 import com.example.osfix.entity.DTO.ClientDto;
 import com.example.osfix.entity.DTO.ReturnClientDto;
 import com.example.osfix.service.ClientService;
@@ -32,9 +31,8 @@ public class ClientController {
     public void deleteClient(@PathVariable Long id) {
         clientService.deleteClient(id);
     }
-
     @GetMapping("/clientapplication/{id}")
     public List<Application> getAllBy(@PathVariable(value = "id") Long clientId) {
-       return clientService.getAllBy(clientId);
+        return clientService.getAllBy(clientId);
     }
 }
