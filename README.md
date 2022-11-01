@@ -1,3 +1,3 @@
 # Osfix
-Java+Spring+Gradle+Postgresql
+Java+Spring+Gradle+Postgresql+Flyway
 CRUD
